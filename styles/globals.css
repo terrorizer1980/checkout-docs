@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+p {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0 10%;
+  margin: 20px auto;
+}
