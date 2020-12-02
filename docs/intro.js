@@ -9,7 +9,7 @@ export const Intro = () => {
         </p>
         <h4>How to use these docs</h4>
         <p>
-            Select your preferred options over on the right. Whether you're integrating PayPal on Web, iOS, or Android, using the PayPal SDK or APIs, these docs will automatically adjust to your preferences.
+            Select your preferred options in the right panel. Whether you're integrating PayPal on Web, iOS, or Android, using the PayPal SDK or APIs, these docs will automatically adjust to your preferences.
         </p>
         <h4>Next Steps</h4>
         <p>
