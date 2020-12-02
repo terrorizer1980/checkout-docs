@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 
-import { ModifierProvider } from './components/modifier';
-import { RouterProvider } from './components/router';
+import { ModifierProvider } from '../components/modifier';
+import { RouterProvider } from '../components/router';
 
 function MyApp({ Component, pageProps }) {
   return <ModifierProvider>

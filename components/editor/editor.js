@@ -1,14 +1,22 @@
 
-import AceEditor from 'react-ace';
-import 'ace-builds/src-noconflict/theme-idle_fingers';
-import 'ace-builds/src-noconflict/mode-html';
-import 'ace-builds/src-noconflict/mode-swift';
-import 'ace-builds/src-noconflict/mode-javascript';
-import 'ace-builds/src-noconflict/mode-sh';
-import 'ace-builds/src-noconflict/mode-kotlin';
-import 'ace-builds/src-noconflict/mode-java';
+import dynamic from 'next/dynamic'
 
-const FullEditor = ({ language = 'html', value, onChange }) => {
+const AceEditorPromise = import('react-ace').then(ReactAce => {
+    return Promise.all([
+        import('ace-builds/src-noconflict/mode-html'),
+        import('ace-builds/src-noconflict/mode-swift'),
+        import('ace-builds/src-noconflict/mode-javascript'),
+        import('ace-builds/src-noconflict/mode-sh'),
+        import('ace-builds/src-noconflict/mode-kotlin'),
+        import('ace-builds/src-noconflict/mode-java')
+    ]).then(() => {
+        return ReactAce;
+    });
+});
+
+const AceEditor = dynamic(AceEditorPromise, { ssr: false });
+
+export default function({ language = 'html', value, onChange }) {
     if (typeof window === 'undefined') {
         return null;
     }
@@ -35,5 +43,3 @@ const FullEditor = ({ language = 'html', value, onChange }) => {
         </div>
     );
 }
-
-export default FullEditor;

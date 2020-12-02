@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import { ModifierGroup, Modifier, useModifiers } from './components/modifier'
-import { Link, Route } from './components/router';
+import { ModifierGroup, Modifier, useModifiers } from '../components/modifier'
+import { Link, Route } from '../components/router';
 
-import { Intro } from './docs/intro'
-import { QuickStart } from './docs/quickstart';
+import { Intro } from '../docs/intro'
+import { QuickStart } from '../docs/quickstart';
 
 export default function Home() {
   const modifiers = useModifiers();
